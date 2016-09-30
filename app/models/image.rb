@@ -15,6 +15,10 @@ class Image < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :fans,
+             :through => :likes,
+             :source => :user
+
   # Validations
 
   validates :image, :presence => true
