@@ -1,6 +1,10 @@
 class Comment < ApplicationRecord
   # Direct associations
 
+  belongs_to :photo,
+             :class_name => "Image",
+             :counter_cache => true
+
   belongs_to :commenter,
              :class_name => "User",
              :foreign_key => "user_id"
